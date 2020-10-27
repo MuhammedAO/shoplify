@@ -1,3 +1,26 @@
 main {
   min-height: 80vh;
 }
+
+.rating span {
+  margin: 0.1rem;
+}
+
+h3 {
+  padding: 1rem 0;
+}
+
+
+.block-7 {
+  margin-bottom: 30px;
+  padding: 30px;
+  -webkit-box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.11);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.11);
+  background: #fff;
+}
+
+@media (min-width: 768px) {
+  .block-7 {
+      padding: 40px;
+  }
+}
