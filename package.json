@@ -1,0 +1,27 @@
+{
+  "name": "shoplify",
+  "version": "1.0.0",
+  "description": "mern shopping project",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuhammedAO/shoplify.git"
+  },
+  "keywords": [],
+  "author": "Muhammed Ogunsanya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MuhammedAO/shoplify/issues"
+  },
+  "homepage": "https://github.com/MuhammedAO/shoplify#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
