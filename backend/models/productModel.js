@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const reviewSchema = mongoose.Schema({
   name: {
@@ -21,7 +21,7 @@ const reviewSchema = mongoose.Schema({
 const productSchema = mongoose.Schema(
   {
     user: {
-      user: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: 'User'
     },
@@ -72,4 +72,4 @@ const productSchema = mongoose.Schema(
 
 const Product = mongoose.model('Product', productSchema)
 
-module.exports = { Product }
+export default Product 

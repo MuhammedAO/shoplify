@@ -1,8 +1,8 @@
-const express = require('express')
-, products = require('./data/products')
-, dotenv = require('dotenv')
-, connectDB = require('./config/db')
-, colors = require('colors')
+import express from 'express'
+import colors from 'colors'
+import dotenv from 'dotenv'
+import products from './data/products.js'
+import connectDB from './config/db.js'
 
 dotenv.config()
 
