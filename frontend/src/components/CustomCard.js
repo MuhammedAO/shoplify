@@ -8,7 +8,7 @@ const CustomCard = ({ product }) => {
       <div className="block-7">
         <div className="text-center">
           <Link to={`/product/${product._id}`}>
-            <img className="img-fluid" src={product.image} />
+            <img className="img-fluid" src={product.image} alt='prod image'/>
           </Link>
           <Link to={`/product/${product._id}`}>
             <h4 className="h4 pt-4" style={{ 'color': 'black', 'fontWeight': '500' }}><strong>{product.name}</strong></h4>
