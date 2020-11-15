@@ -6,11 +6,13 @@ import Header from './components/Header'
 import HomeScreen from './screens/HomeScreen'
 import ProductScreen from './screens/ProductScreen'
 import CartScreen from './screens/CartScreen'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <Router>
-      <Header />
+     { /*<Header />*/}
+      <Navbar/>
       <main className="py-3">
         <Container>
           <Route exact path='/' component={HomeScreen} />
