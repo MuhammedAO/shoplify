@@ -11,6 +11,10 @@ import {
   NavItem,
   NavLinks,
 } from './NavElements'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../actions/userActions'
+
+
 
 function Navbar() {
   const [click, setClick] = useState(false)
@@ -33,6 +37,15 @@ function Navbar() {
 
   window.addEventListener('resize', showButton)
 
+  const userLogin = useSelector(state => state.userLogin)
+  const { userInfo } = userLogin
+
+  const dispatch = useDispatch()
+
+  const logoutHandler = () => {
+    dispatch(logout())
+  }
+
   return (
     <React.Fragment>
       <IconContext.Provider value={{ color: '#fff' }}>
@@ -48,15 +61,33 @@ function Navbar() {
             <NavMenu onClick={handleClick} click={click}>
               <NavItem>
                 <NavLinks to='/cart' onClick={closeMobileMenu}>
-                <i className="fas fa-shopping-cart"></i>Cart
+                  <i className="fas fa-shopping-cart"></i>Cart
                 </NavLinks>
               </NavItem>
-              <NavItem>
-                <NavLinks to='/login' onClick={closeMobileMenu}>
-                  Sign up
-                </NavLinks>
-              </NavItem>
-              
+              {userInfo ?
+                <React.Fragment>
+                  <NavItem>
+                    <NavLinks to='/profile' onClick={closeMobileMenu}>
+                      Profile
+                    </NavLinks>
+                  </NavItem>
+                  <NavItem>
+                    <NavLinks to=''>
+                      {userInfo.name}
+                    </NavLinks>
+                  </NavItem>
+                  <NavItem>
+                    <NavLinks to='' onClick={logoutHandler}>
+                      Log out
+                    </NavLinks>
+                  </NavItem>
+                </React.Fragment>
+                : <NavItem>
+                  <NavLinks to='/login' onClick={closeMobileMenu}>
+                    Sign in
+              </NavLinks>
+                </NavItem>
+              }
             </NavMenu>
           </NavbarContainer>
         </Nav>
